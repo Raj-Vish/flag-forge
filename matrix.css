@@ -1,0 +1,41 @@
+:root {
+  --bg: #020205;
+  --neon: #0fd850;
+  --accent: #f9f047;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  overflow-x: hidden;
+  font-family: Inter, system-ui;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: block;
+}
+
+.ui {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: #dfffe0;
+  padding-bottom: 100px; /* Space for footer */
+}
+
+.controls {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 3;
+  color: #bfecc0;
+  font-size: 13px;
+}

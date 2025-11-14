@@ -1,19 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flag Forge — Breach the Gates</title>
+
+    <!-- Added For SEO -->
+    <meta
+      name="title"
+      content="Flag Forge CTF — Hackathon 2025 | Breach the Gates at RJ College"
+    />
+    <meta
+      name="description"
+      content="Join Flag Forge CTF — a thrilling 5-hour hackathon by RJ College, Mumbai. Showcase your skills in cybersecurity, Capture the Flag challenges, and innovation. Register now!"
+    />
+    <meta
+      name="keywords"
+      content="Flag Forge, CTF, Capture The Flag, Hackathon 2025, RJ College, Mumbai Hackathon, Cybersecurity Event, Ethical Hacking, Student Tech Fest, Coding Competition"
+    />
+    <meta name="author" content="RJ College Tech Fest Team" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Add Open Graph Meta Tags (for Instagram, Facebook, LinkedIn) -->
+
+    <meta
+      property="og:title"
+      content="Flag Forge CTF — Breach the Gates 2025"
+    />
+    <meta
+      property="og:description"
+      content="Participate in the ultimate 5-hour Capture The Flag Hackathon by RJ College."
+    />
+    <meta
+      property="og:image"
+      content="https://www.flagforgectf.rjcollege.edu.in/HackInHub-Logo.png"
+    />
+    <meta
+      property="og:url"
+      content="https://www.flagforgectf.rjcollege.edu.in/"
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" type="image/png" href="HackInHub-Logo.png" />
+    <link rel="canonical" href="https://www.flagforgectf.rjcollege.edu.in/" />
+
+    <link rel="apple-touch-icon" href="HackInHub-Logo.png" />
+
     <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="logo.css" />
     <link rel="stylesheet" href="matrix.css" />
     <link rel="stylesheet" href="footer.css" />
-    <link rel="stylesheet" href="sponsor.css">
+    <link rel="stylesheet" href="sponsor.css" />
+    <link rel="stylesheet" href="prize.css" />
+    <link rel="stylesheet" href="timeline.css" />
     <!-- Add Font Awesome for social icons -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
+
+    <!-- Added For SEO -->
+
+    <!-- Event Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Flag Forge CTF — Breach the Gates 2025",
+        "startDate": "2025-02-20T10:00",
+        "endDate": "2026-02-20T15:00",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Ramniranjan Jhunjhunwala College",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Ghatkopar West",
+            "addressLocality": "Mumbai",
+            "postalCode": "400086",
+            "addressRegion": "Maharashtra",
+            "addressCountry": "IN"
+          }
+        },
+        "image": [
+          "https://www.flagforgectf.rjcollege.edu.in/HackInHub-Logo.png"
+        ],
+        "description": "Flag Forge CTF is a 5-hour hackathon organized by RJ College, focused on cybersecurity, Capture the Flag, and innovation.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "RJ College Tech Fest Committee",
+          "url": "https://www.rjcollege.edu.in/"
+        }
+      }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "RJ College Tech Fest",
+        "url": "https://www.rjcollege.edu.in/",
+        "logo": "https://www.flagforgectf.rjcollege.edu.in/HackInHub-Logo.png",
+        "sameAs": ["https://www.instagram.com/", "https://www.linkedin.com/"]
+      }
+    </script>
+
+    <!-- BredCrumb Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.flagforgectf.rjcollege.edu.in/"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <!-- Matrix Background -->
@@ -40,7 +150,22 @@
             >REGISTER NOW For Rs 499/-</a
           >
         </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
       </nav>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-nav-buttons">
+          <a href="#" class="nav-btn2 ghost-btn2" target="_blank">BROCHURE</a>
+          <a href="#" class="nav-btn3 ghost-btn" target="_blank"
+            >REGISTER NOW For Rs 499/-</a
+          >
+        </div>
+      </div>
 
       <!-- Center Logo Section with H1 below -->
       <section class="logo-section">
@@ -79,114 +204,420 @@
         <br /><br />
       </div>
 
-                                       <!-- sponsor -->
- <!-- SPONSOR SECTION -->
-   
-<!-- Add this right after the Download Brochure section and before the footer -->
-<section class="sponsor-section">
-  <h2 class="sponsor-main-title">OUR SPONSORS</h2>
+      <!-- sponsor -->
+      <!-- SPONSOR SECTION -->
 
-  <div class="sponsor-slider">
-    <div class="sponsor-track">
-      <!-- Sponsor 1 -->
-      <div class="sponsor-card">
-        <div class="sponsor-logo-container">
-          <img
-            src="fdf9b708-a799-4ecb-a131-e81560d53be3.png"
-            alt="Altered Security Logo"
-            class="sponsor-logo"
-          />
+      <!-- Add this right after the Download Brochure section and before the footer -->
+      <section class="sponsor-section">
+        <h2 class="sponsor-main-title">OUR SPONSORS</h2>
+
+        <div class="sponsor-slider">
+          <div class="sponsor-track">
+            <!-- Sponsor 1 -->
+            <div class="sponsor-card">
+              <div class="sponsor-logo-container">
+                <img
+                  src="fdf9b708-a799-4ecb-a131-e81560d53be3.png"
+                  alt="Altered Security Logo"
+                  class="sponsor-logo"
+                />
+              </div>
+              <h3 class="sponsor-title">
+                <span class="highlight">Altered Security</span>
+              </h3>
+              <p class="sponsor-description">
+                Altered Security is an edtech with focus on hands-on learning
+                through red team training and cyber ranges, empowering over
+                <span class="highlight">25,000+</span> InfoSec professionals
+                worldwide.
+              </p>
+            </div>
+
+            <!-- Sponsor 2 -->
+            <div class="sponsor-card">
+              <div class="sponsor-logo-container">
+                <img
+                  src="second-sponsor.png"
+                  alt="CyberSafe Labs Logo"
+                  class="sponsor-logo"
+                />
+              </div>
+              <h3 class="sponsor-title">
+                <span class="highlight">CyberSafe Labs</span>
+              </h3>
+              <p class="sponsor-description">
+                CyberSafe Labs focuses on enterprise-level cybersecurity defense
+                simulations and red-blue team training for modern organizations.
+              </p>
+            </div>
+
+            <!-- Sponsor 3 -->
+            <div class="sponsor-card">
+              <div class="sponsor-logo-container">
+                <img
+                  src="third-sponsor.png"
+                  alt="HackMasters Logo"
+                  class="sponsor-logo"
+                />
+              </div>
+              <h3 class="sponsor-title">
+                <span class="highlight">HackMasters</span>
+              </h3>
+              <p class="sponsor-description">
+                HackMasters delivers high-end penetration testing tools, bug
+                bounty resources, and real-world hacking challenges for aspiring
+                professionals.
+              </p>
+            </div>
+
+            <!-- Duplicate sponsors for smooth infinite loop -->
+            <div class="sponsor-card">
+              <div class="sponsor-logo-container">
+                <img
+                  src="fdf9b708-a799-4ecb-a131-e81560d53be3.png"
+                  alt="Altered Security Logo"
+                  class="sponsor-logo"
+                />
+              </div>
+              <h3 class="sponsor-title">
+                <span class="highlight">Altered Security</span>
+              </h3>
+              <p class="sponsor-description">
+                Altered Security is an edtech with focus on hands-on learning
+                through red team training and cyber ranges, empowering over
+                <span class="highlight">25,000+</span> InfoSec professionals
+                worldwide.
+              </p>
+            </div>
+
+            <div class="sponsor-card">
+              <div class="sponsor-logo-container">
+                <img
+                  src="second-sponsor.png"
+                  alt="CyberSafe Labs Logo"
+                  class="sponsor-logo"
+                />
+              </div>
+              <h3 class="sponsor-title">
+                <span class="highlight">CyberSafe Labs</span>
+              </h3>
+              <p class="sponsor-description">
+                CyberSafe Labs focuses on enterprise-level cybersecurity defense
+                simulations and red-blue team training for modern organizations.
+              </p>
+            </div>
+
+            <div class="sponsor-card">
+              <div class="sponsor-logo-container">
+                <img
+                  src="third-sponsor.png"
+                  alt="HackMasters Logo"
+                  class="sponsor-logo"
+                />
+              </div>
+              <h3 class="sponsor-title">
+                <span class="highlight">HackMasters</span>
+              </h3>
+              <p class="sponsor-description">
+                HackMasters delivers high-end penetration testing tools, bug
+                bounty resources, and real-world hacking challenges for aspiring
+                professionals.
+              </p>
+            </div>
+          </div>
         </div>
-        <h3 class="sponsor-title"><span class="highlight">Altered Security</span></h3>
-        <p class="sponsor-description">
-          Altered Security is an edtech with focus on hands-on learning through red team
-          training and cyber ranges, empowering over <span class="highlight">25,000+</span> InfoSec
-          professionals worldwide.
-        </p>
-      </div>
+      </section>
+      <!--                                           PRIZES                -->
 
-      <!-- Sponsor 2 -->
-      <div class="sponsor-card">
-        <div class="sponsor-logo-container">
-          <img
-            src="second-sponsor.png"
-            alt="CyberSafe Labs Logo"
-            class="sponsor-logo"
-          />
+      <!-- Add this after the sponsors section and before the footer -->
+      <section class="prize-section">
+        <h2 class="prize-main-title">PRIZES & REWARDS</h2>
+
+        <div class="prize-container">
+          <!-- 1st Prize -->
+          <div class="prize-card first-prize">
+            <div class="prize-rank">
+              <div class="rank-circle">
+                <span class="rank-number">1</span>
+                <div class="rank-glow"></div>
+              </div>
+              <h3 class="prize-title">FIRST PRIZE</h3>
+            </div>
+            <div class="prize-content">
+              <div class="prize-amount">
+                <span class="currency">₹</span>
+                <span class="amount">50,000</span>
+              </div>
+              <div class="prize-features">
+                <div class="feature">
+                  <i class="fas fa-trophy"></i>
+                  <span>Winner Trophy</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-certificate"></i>
+                  <span>Certification</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-briefcase"></i>
+                  <span>Internship Opportunities</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-gift"></i>
+                  <span>Swag Kit</span>
+                </div>
+              </div>
+              <div class="prize-description">
+                The ultimate recognition for cybersecurity excellence
+              </div>
+            </div>
+            <div class="prize-ornament"></div>
+          </div>
+
+          <!-- 2nd Prize -->
+          <div class="prize-card second-prize">
+            <div class="prize-rank">
+              <div class="rank-circle">
+                <span class="rank-number">2</span>
+                <div class="rank-glow"></div>
+              </div>
+              <h3 class="prize-title">SECOND PRIZE</h3>
+            </div>
+            <div class="prize-content">
+              <div class="prize-amount">
+                <span class="currency">₹</span>
+                <span class="amount">25,000</span>
+              </div>
+              <div class="prize-features">
+                <div class="feature">
+                  <i class="fas fa-medal"></i>
+                  <span>Runner-up Medal</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-certificate"></i>
+                  <span>Certification</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-briefcase"></i>
+                  <span>Interview Opportunities</span>
+                </div>
+              </div>
+              <div class="prize-description">
+                Exceptional performance deserves exceptional rewards
+              </div>
+            </div>
+            <div class="prize-ornament"></div>
+          </div>
+
+          <!-- 3rd Prize -->
+          <div class="prize-card third-prize">
+            <div class="prize-rank">
+              <div class="rank-circle">
+                <span class="rank-number">3</span>
+                <div class="rank-glow"></div>
+              </div>
+              <h3 class="prize-title">THIRD PRIZE</h3>
+            </div>
+            <div class="prize-content">
+              <div class="prize-amount">
+                <span class="currency">₹</span>
+                <span class="amount">15,000</span>
+              </div>
+              <div class="prize-features">
+                <div class="feature">
+                  <i class="fas fa-award"></i>
+                  <span>Bronze Medal</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-certificate"></i>
+                  <span>Certification</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-gift"></i>
+                  <span>Goodies Pack</span>
+                </div>
+              </div>
+              <div class="prize-description">
+                Celebrating outstanding cybersecurity skills
+              </div>
+            </div>
+            <div class="prize-ornament"></div>
+          </div>
         </div>
-        <h3 class="sponsor-title"><span class="highlight">CyberSafe Labs</span></h3>
-        <p class="sponsor-description">
-          CyberSafe Labs focuses on enterprise-level cybersecurity defense simulations and
-          red-blue team training for modern organizations.
-        </p>
-      </div>
+      </section>
 
-      <!-- Sponsor 3 -->
-      <div class="sponsor-card">
-        <div class="sponsor-logo-container">
-          <img
-            src="third-sponsor.png"
-            alt="HackMasters Logo"
-            class="sponsor-logo"
-          />
+      <!-- TIMELINE -->
+      <div class="container timeline-section">
+        <div class="timeline-header">
+          <h1>TIMELINE FOR FLAG FORGE</h1>
+          <p class="subtitle">
+            Capture The Flag Hackathon - Journey to Victory
+          </p>
         </div>
-        <h3 class="sponsor-title"><span class="highlight">HackMasters</span></h3>
-        <p class="sponsor-description">
-          HackMasters delivers high-end penetration testing tools, bug bounty resources, and
-          real-world hacking challenges for aspiring professionals.
-        </p>
-      </div>
 
-      <!-- Duplicate sponsors for smooth infinite loop -->
-      <div class="sponsor-card">
-        <div class="sponsor-logo-container">
-          <img
-            src="fdf9b708-a799-4ecb-a131-e81560d53be3.png"
-            alt="Altered Security Logo"
-            class="sponsor-logo"
-          />
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+          <!-- your timeline items remain the same -->
+
+          <div class="timeline-items">
+            <!-- PHASE 1 -->
+            <div class="timeline-item">
+              <div class="phase-number">1</div>
+              <div class="timeline-content">
+                <h2 class="phase-title">
+                  <span class="phase-icon"
+                    ><i class="fas fa-user-plus"></i
+                  ></span>
+                  PHASE 1: REGISTRATION
+                </h2>
+                <p class="phase-description">
+                  Secure your spot in the most anticipated CTF hackathon.
+                  Registration includes access to all challenge levels,
+                  workshops, and exclusive resources.
+                </p>
+
+                <div class="checklist">
+                  <div class="checklist-item">
+                    <i class="fas fa-square"></i>
+                    <span>Register before October 20th</span>
+                  </div>
+                  <div class="checklist-item">
+                    <i class="fas fa-check-square"></i>
+                    <span>Individual & Team registration available</span>
+                  </div>
+                  <div class="checklist-item">
+                    <i class="fas fa-square"></i>
+                    <span>Receive confirmation email within 24 hours</span>
+                  </div>
+                </div>
+
+                <div class="price-tag">
+                  <i class="fas fa-tag"></i>
+                  Registration Fee: Rs 499/-
+                </div>
+              </div>
+            </div>
+
+            <!-- PHASE 2 -->
+            <div class="timeline-item">
+              <div class="phase-number">2</div>
+              <div class="timeline-content">
+                <h2 class="phase-title">
+                  <span class="phase-icon"
+                    ><i class="fas fa-laptop-code"></i
+                  ></span>
+                  PHASE 2: HACKING EVENT
+                </h2>
+                <p class="phase-description">
+                  The main CTF competition begins! Test your skills across
+                  multiple challenge levels with increasing difficulty.
+                </p>
+
+                <div class="hackathon-schedule">
+                  <div class="schedule-title">Hackathon Timeline</div>
+
+                  <div class="schedule-item">
+                    <div class="schedule-time">10:00 AM - 12:00 PM</div>
+                    <div class="schedule-event">CTF Level 1: Hunt Begins</div>
+                  </div>
+
+                  <div class="schedule-item">
+                    <div class="schedule-time">12:00 PM - 02:00 PM</div>
+                    <div class="schedule-event">
+                      CTF Level 2: Elimination Round
+                    </div>
+                  </div>
+
+                  <div class="schedule-item">
+                    <div class="schedule-time">02:00 PM - 04:00 PM</div>
+                    <div class="schedule-event">
+                      CTF Level 3: Final Showdown
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tech-badge">
+                  <i class="fas fa-desktop"></i> XD-20mC-X-Linux
+                </div>
+              </div>
+            </div>
+
+            <!-- PHASE 3 -->
+            <div class="timeline-item">
+              <div class="phase-number">3</div>
+              <div class="timeline-content">
+                <h2 class="phase-title">
+                  <span class="phase-icon"
+                    ><i class="fas fa-clipboard-check"></i
+                  ></span>
+                  PHASE 3: EVALUATION
+                </h2>
+                <p class="phase-description">
+                  Comprehensive assessment of all submissions by our panel of
+                  experts combined with automated scoring systems.
+                </p>
+
+                <div class="judges-list">
+                  <div class="judge-item">
+                    <i class="fas fa-user-tie"></i>
+                    <div>Faculty Members</div>
+                  </div>
+                  <div class="judge-item">
+                    <i class="fas fa-robot"></i>
+                    <div>Auto Scoring Facility</div>
+                  </div>
+                  <div class="judge-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>Industry Experts</div>
+                  </div>
+                </div>
+
+                <div class="tech-badge">
+                  <i class="fas fa-star"></i> Fair & Transparent Evaluation
+                </div>
+              </div>
+            </div>
+
+            <!-- PHASE 4 -->
+            <div class="timeline-item">
+              <div class="phase-number">4</div>
+              <div class="timeline-content">
+                <h2 class="phase-title">
+                  <span class="phase-icon"><i class="fas fa-trophy"></i></span>
+                  PHASE 4: RESULTS
+                </h2>
+
+                <div class="results-container">
+                  <div class="winner-trophy">
+                    <i class="fas fa-trophy"></i>
+                  </div>
+                  <div class="winner-text">
+                    Celebrating Excellence in Cybersecurity
+                  </div>
+                  <p class="phase-description">
+                    The moment of truth! Winners will be announced and awarded
+                    for their exceptional performance in the CTF challenges.
+                  </p>
+
+                  <div class="prizes">
+                    <div class="prize-item">
+                      <div class="prize-place">1st Place</div>
+                      <div class="prize-amount">₹50,000</div>
+                    </div>
+                    <div class="prize-item">
+                      <div class="prize-place">2nd Place</div>
+                      <div class="prize-amount">₹30,000</div>
+                    </div>
+                    <div class="prize-item">
+                      <div class="prize-place">3rd Place</div>
+                      <div class="prize-amount">₹20,000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h3 class="sponsor-title"><span class="highlight">Altered Security</span></h3>
-        <p class="sponsor-description">
-          Altered Security is an edtech with focus on hands-on learning through red team
-          training and cyber ranges, empowering over <span class="highlight">25,000+</span> InfoSec
-          professionals worldwide.
-        </p>
       </div>
-
-      <div class="sponsor-card">
-        <div class="sponsor-logo-container">
-          <img
-            src="second-sponsor.png"
-            alt="CyberSafe Labs Logo"
-            class="sponsor-logo"
-          />
-        </div>
-        <h3 class="sponsor-title"><span class="highlight">CyberSafe Labs</span></h3>
-        <p class="sponsor-description">
-          CyberSafe Labs focuses on enterprise-level cybersecurity defense simulations and
-          red-blue team training for modern organizations.
-        </p>
-      </div>
-
-      <div class="sponsor-card">
-        <div class="sponsor-logo-container">
-          <img
-            src="third-sponsor.png"
-            alt="HackMasters Logo"
-            class="sponsor-logo"
-          />
-        </div>
-        <h3 class="sponsor-title"><span class="highlight">HackMasters</span></h3>
-        <p class="sponsor-description">
-          HackMasters delivers high-end penetration testing tools, bug bounty resources, and
-          real-world hacking challenges for aspiring professionals.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 
       <!-- ------------------------------------------all content inside this div------------------------------------------------------ -->
     </div>
@@ -281,8 +712,10 @@
       </div>
     </footer>
 
+    <script src="navbar.js"></script>
     <script src="matrix.js"></script>
     <script src="footer.js"></script>
+    <script src="prize.js"></script>
+    <script src="timeline.js"></script>
   </body>
 </html>
-Z

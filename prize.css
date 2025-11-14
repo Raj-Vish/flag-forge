@@ -1,0 +1,315 @@
+/* Prize Section Styles */
+.prize-section {
+  width: 100%;
+  padding: 80px 0;
+  background: rgba(10, 15, 25, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  margin: 60px auto;
+  max-width: 95%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+}
+
+.prize-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ff88, transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.prize-main-title {
+  color: #00ff88;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.7);
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.prize-main-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ff88, transparent);
+}
+
+.prize-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.prize-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 380px;
+  background: rgba(15, 20, 30, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  
+  /* Initial hidden state for animation */
+  opacity: 0;
+  transform: translateY(100px) scale(0.8);
+}
+
+/* Drop animation - will be triggered by JavaScript */
+.prize-card.animate-drop {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: dropBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes dropBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-300px) rotate(-10deg) scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(30px) rotate(5deg) scale(1.05);
+  }
+  80% {
+    transform: translateY(-10px) rotate(-2deg) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0) scale(1);
+  }
+}
+
+/* Stagger the animations */
+.first-prize.animate-drop {
+  animation-delay: 0.1s;
+}
+
+.second-prize.animate-drop {
+  animation-delay: 0.3s;
+}
+
+.third-prize.animate-drop {
+  animation-delay: 0.5s;
+}
+
+/* Hover effects */
+.prize-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 255, 136, 0.3);
+  border-color: rgba(0, 255, 136, 0.4);
+  background: rgba(20, 25, 35, 0.8);
+}
+
+/* First Prize Special Effects */
+.first-prize {
+  border-color: rgba(249, 240, 71, 0.3);
+  box-shadow: 0 10px 30px rgba(249, 240, 71, 0.2);
+}
+
+.first-prize:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 25px 50px rgba(249, 240, 71, 0.4);
+}
+
+.first-prize .rank-circle {
+  background: linear-gradient(135deg, #f9f047, #ffd700);
+}
+
+.first-prize .prize-amount {
+  color: #f9f047;
+  text-shadow: 0 0 20px rgba(249, 240, 71, 0.5);
+}
+
+/* Second Prize */
+.second-prize .rank-circle {
+  background: linear-gradient(135deg, #c0c0c0, #e0e0e0);
+}
+
+.second-prize .prize-amount {
+  color: #c0c0c0;
+  text-shadow: 0 0 15px rgba(192, 192, 192, 0.5);
+}
+
+/* Third Prize */
+.third-prize .rank-circle {
+  background: linear-gradient(135deg, #cd7f32, #b08d57);
+}
+
+.third-prize .prize-amount {
+  color: #cd7f32;
+  text-shadow: 0 0 15px rgba(205, 127, 50, 0.5);
+}
+
+.prize-rank {
+  margin-bottom: 25px;
+}
+
+.rank-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.rank-glow {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  background: inherit;
+  filter: blur(10px);
+  opacity: 0.7;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.rank-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+.prize-title {
+  font-size: 1.3rem;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.prize-content {
+  position: relative;
+  z-index: 2;
+}
+
+.prize-amount {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 20px 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.currency {
+  font-size: 2rem;
+  margin-right: 5px;
+}
+
+.amount {
+  background: linear-gradient(135deg, #00ff88, #f9f047);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.prize-features {
+  margin: 25px 0;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 12px 0;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature i {
+  color: #00ff88;
+  margin-right: 12px;
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.feature span {
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.prize-description {
+  color: #aaa;
+  font-style: italic;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.prize-ornament {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0, 255, 136, 0.1) 50%);
+  border-bottom-left-radius: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .prize-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .prize-card {
+    max-width: 450px;
+    margin-bottom: 30px;
+  }
+  
+  .first-prize:hover {
+    transform: translateY(-15px) scale(1.02);
+  }
+}
+
+@media (max-width: 768px) {
+  .prize-main-title {
+    font-size: 2rem;
+  }
+  
+  .prize-amount {
+    font-size: 2.5rem;
+  }
+}

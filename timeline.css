@@ -1,0 +1,671 @@
+/* Timeline Section */
+.timeline-section {
+    padding: 80px 2rem;
+    background: rgba(10, 15, 25, 0.6);
+    margin: 2rem auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 136, 0.15);
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-header h1 {
+    color: #00ff88;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(90deg, #4a7eff, #8b5cf6, #4a7eff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 3s ease infinite;
+    text-shadow: 0 2px 10px rgba(74, 126, 255, 0.3);
+    text-align: center;
+    width: 100%;
+}
+
+.timeline-header .subtitle {
+    color: #a0a8cc;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+}
+
+.timeline-container {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4a7eff, #8b5cf6);
+    transform: translateX(-50%);
+    z-index: 0;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 8px rgba(74, 126, 255, 0.8));
+}
+
+.timeline-items {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.timeline-item {
+    display: flex;
+    width: 100%;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-end;
+    transform: translateX(100px);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-content {
+    width: 45%;
+    background: rgba(16, 20, 40, 0.85);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(64, 112, 244, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.timeline-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4a7eff, #8b5cf6);
+}
+
+.timeline-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-color: rgba(64, 112, 244, 0.5);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid rgba(16, 20, 40, 0.85);
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid rgba(16, 20, 40, 0.85);
+}
+
+.phase-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4a7eff, #8b5cf6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: white;
+    z-index: 10;
+    box-shadow: 0 0 0 10px rgba(16, 20, 40, 1), 
+                0 0 25px rgba(74, 126, 255, 0.8),
+                inset 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+}
+
+.timeline-item:hover .phase-number {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 0 10px rgba(16, 20, 40, 1), 
+                0 0 35px rgba(74, 126, 255, 0.9);
+}
+
+.phase-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #8bafff;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.phase-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(74, 126, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phase-description {
+    color: #cbd5ff;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.price-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    color: #064e3b;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.hackathon-schedule {
+    background: rgba(30, 35, 60, 0.7);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-left: 4px solid #4a7eff;
+}
+
+.schedule-title {
+    font-size: 1.2rem;
+    color: #8bafff;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-time {
+    font-weight: 600;
+    color: #8bafff;
+    min-width: 150px;
+}
+
+.schedule-event {
+    color: #cbd5ff;
+    font-weight: 500;
+}
+
+.tech-badge {
+    display: inline-block;
+    background: rgba(74, 126, 255, 0.2);
+    color: #8bafff;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(74, 126, 255, 0.3);
+}
+
+.judges-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.judge-item {
+    background: rgba(74, 126, 255, 0.15);
+    padding: 0.8rem;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    border: 1px solid rgba(74, 126, 255, 0.3);
+}
+
+.results-container {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.winner-trophy {
+    font-size: 3rem;
+    color: gold;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+.winner-text {
+    font-size: 1.4rem;
+    color: #8bafff;
+    margin-bottom: 1rem;
+}
+
+.prizes {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.prize-item {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(74, 126, 255, 0.2));
+    padding: 1.5rem;
+    border-radius: 12px;
+    min-width: 150px;
+    border: 1px solid rgba(139, 92, 246, 0.4);
+}
+
+.prize-place {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8b5cf6;
+    margin-bottom: 0.5rem;
+}
+
+.prize-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #34d399;
+}
+
+.checklist {
+    margin: 1.5rem 0;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: #cbd5ff;
+}
+
+.checklist-item i {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.checklist-item .fa-square {
+    border: 2px solid #4a7eff;
+    color: transparent;
+}
+
+.checklist-item .fa-check-square {
+    background: #10b981;
+    color: white;
+}
+
+/* Animations */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ==================== */
+/* MOBILE RESPONSIVE - IMPROVED */
+/* ==================== */
+@media (max-width: 768px) {
+    .timeline-section {
+        padding: 40px 1rem;
+        margin: 1rem auto;
+        border-radius: 12px;
+    }
+    
+    .timeline-header {
+        margin-bottom: 2rem;
+    }
+    
+    .timeline-header h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+    
+    .timeline-header .subtitle {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .timeline-container {
+        padding: 1rem 0;
+    }
+    
+    .timeline-line {
+        left: 25px;
+        width: 3px;
+    }
+    
+    .timeline-items {
+        gap: 2.5rem;
+    }
+    
+    .timeline-item {
+        justify-content: flex-start !important;
+        transform: translateY(30px) !important;
+        margin-bottom: 0;
+    }
+    
+    .timeline-item.visible {
+        transform: translateY(0) !important;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 50px);
+        margin-left: 50px !important;
+        padding: 1.2rem;
+        border-radius: 12px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::after,
+    .timeline-item:nth-child(even) .timeline-content::after {
+        display: none;
+    }
+    
+    .phase-number {
+        left: 25px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        box-shadow: 0 0 0 6px rgba(16, 20, 40, 1), 
+                    0 0 15px rgba(74, 126, 255, 0.8),
+                    inset 0 0 8px rgba(255, 255, 255, 0.2);
+    }
+    
+    .phase-title {
+        font-size: 1.1rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .phase-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .phase-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+    
+    .price-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .hackathon-schedule {
+        padding: 1rem;
+        margin-top: 0.8rem;
+        border-radius: 8px;
+    }
+    
+    .schedule-title {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .schedule-item {
+        flex-direction: column;
+        gap: 0.2rem;
+        padding: 0.5rem 0;
+    }
+    
+    .schedule-time {
+        min-width: auto;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+    
+    .schedule-event {
+        font-size: 0.85rem;
+    }
+    
+    .tech-badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.7rem;
+        margin-top: 0.8rem;
+    }
+    
+    .judges-list {
+        gap: 0.6rem;
+        margin-top: 0.8rem;
+    }
+    
+    .judge-item {
+        padding: 0.5rem;
+        min-width: 80px;
+        font-size: 0.8rem;
+        border-radius: 8px;
+    }
+    
+    .results-container {
+        padding: 1rem;
+    }
+    
+    .winner-trophy {
+        font-size: 2rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .winner-text {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+        line-height: 1.3;
+    }
+    
+    .phase-description {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .prizes {
+        gap: 0.8rem;
+        margin-top: 1rem;
+    }
+    
+    .prize-item {
+        padding: 0.8rem;
+        min-width: 100px;
+        border-radius: 8px;
+    }
+    
+    .prize-place {
+        font-size: 0.9rem;
+    }
+    
+    .prize-amount {
+        font-size: 1.1rem;
+    }
+    
+    .checklist {
+        margin: 1rem 0;
+    }
+    
+    .checklist-item {
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+        gap: 0.6rem;
+    }
+    
+    .checklist-item i {
+        width: 16px;
+        height: 16px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Extra small devices - Phones */
+@media (max-width: 480px) {
+    .timeline-section {
+        padding: 30px 0.8rem;
+        margin: 0.5rem auto;
+    }
+    
+    .timeline-header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .timeline-header .subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .timeline-content {
+        padding: 1rem;
+        margin-left: 40px !important;
+        width: calc(100% - 40px);
+    }
+    
+    .phase-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        left: 20px;
+    }
+    
+    .phase-title {
+        font-size: 1rem;
+    }
+    
+    .phase-description {
+        font-size: 0.8rem;
+    }
+    
+    .timeline-line {
+        left: 20px;
+    }
+    
+    .timeline-items {
+        gap: 2rem;
+    }
+    
+    /* Ensure everything fits within screen */
+    .hackathon-schedule,
+    .judges-list,
+    .results-container {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .schedule-item {
+        word-break: break-word;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+    .timeline-section {
+        padding: 20px 0.5rem;
+    }
+    
+    .timeline-content {
+        padding: 0.8rem;
+        margin-left: 35px !important;
+        width: calc(100% - 35px);
+    }
+    
+    .phase-number {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+        left: 17px;
+    }
+    
+    .timeline-line {
+        left: 17px;
+    }
+    
+    .timeline-header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .phase-title {
+        font-size: 0.9rem;
+    }
+}

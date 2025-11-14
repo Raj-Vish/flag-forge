@@ -16,19 +16,18 @@ body {
 }
 
 /* header-nav */
-
 .header-nav {
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5% -3%;
+  padding: 1rem 2rem;
   position: fixed;
   width: 100%;
   
   /* Blurred, transparent background */
-  background-color: rgba(0, 0, 0, 0.5); /* make more see-through */
-  backdrop-filter: blur(8px) saturate(180%); /* stronger blur */
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px) saturate(180%);
   -webkit-backdrop-filter: blur(8px) saturate(180%);
   
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -40,7 +39,7 @@ body {
 .branding {
   display: flex;
   align-items: center;
-  gap: 0 10px;
+  gap: 0 15px;
   margin-right: auto;
 }
 
@@ -50,26 +49,24 @@ a {
 }
 
 .header-nav .branding img {
-  margin-top: 7%;
   display: inline-block;
-  width: 100px;
+  width: 80px;
+  height: auto;
   transition: width 0.4s;
 }
 
-img {
-  height: 100%;
-}
-/* flag forde text */
+/* flag forge text - Smaller font size */
 .brand-name {
-  font-size: 28px;
-  font-family: "Orbitron", sans-serif; /* futuristic font */
+  font-size: 18px; /* Reduced from 28px */
+  font-family: "Orbitron", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   color: #0fd850;
   text-align: center;
   position: relative;
   animation: glow 2s ease-in-out infinite alternate, flicker 3s infinite;
   text-shadow: 0 0 10px #0fd850, 0 0 20px #0fd850, 0 0 30px #0fd850;
+  white-space: nowrap;
 }
 
 /* Neon glow animation */
@@ -100,14 +97,14 @@ img {
   }
 }
 
-/* ✅ Fixed line animation (disappears after crossing) */
+/* Fixed line animation */
 .brand-name::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -35px;
+  bottom: -25px;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: linear-gradient(90deg, #0fd850, #f9f047);
   animation: moveLine 2s ease-in-out infinite;
   border-radius: 5px;
@@ -131,23 +128,12 @@ img {
     opacity: 0;
   }
 }
-.header-nav .branding .brand-name {
-  color: #eeeeee;
-  transition: font-size 0.4s;
-}
-
-.header-nav .nav-buttons {
-  display: flex;
-  gap: 0 18px;
-  margin-right: 3%;
-}
 
 /* nav-buttons */
-
 .header-nav .nav-buttons {
   display: flex;
   gap: 0 18px;
-  margin-right: 3%;
+  margin-right: 0;
 }
 
 .nav-btn {
@@ -174,9 +160,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none; /* removes underline */
+  text-decoration: none;
   color: white;
-  transition: all 1s ease; /* ⏳ made slower */
+  transition: all 1s ease;
 }
 .nav-btn2::before {
   content: "";
@@ -187,9 +173,7 @@ img {
   top: 0;
   left: 0;
   background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
-  transition: width 5s ease; /* ⏳ slower fill animation */
-
-  transition: 0.5s ease;
+  transition: width 0.5s ease;
   display: block;
   z-index: -1;
 }
@@ -204,10 +188,10 @@ img {
 }
 
 .nav-btn3 {
-  width: 15em; /* ⬆️ Increased width */
-  height: 3.2em; /* slightly taller for balance */
+  width: 15em;
+  height: 3.2em;
   border-radius: 30em;
-  font-size: 16px; /* slightly larger text */
+  font-size: 16px;
   font-family: inherit;
   border: 2px solid white;
   position: relative;
@@ -219,25 +203,25 @@ img {
   justify-content: center;
   text-decoration: none;
   color: white;
-  transition: all 0.8s ease; /* smooth transition */
+  transition: all 0.8s ease;
 }
 
 .nav-btn3::before {
   content: "";
   width: 0;
-  height: 100%; /* covers full height */
+  height: 100%;
   border-radius: 30em;
   position: absolute;
   top: 0;
   left: 0;
   background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
-  transition: width 0.8s ease; /* smooth gradient fill */
+  transition: width 0.8s ease;
   display: block;
   z-index: -1;
 }
 
 .nav-btn3:hover::before {
-  width: 100%; /* fills entire button */
+  width: 100%;
 }
 
 .nav-btn3:hover {
@@ -245,26 +229,9 @@ img {
   box-shadow: 0 0 25px rgba(249, 240, 71, 0.8), 0 0 50px rgba(15, 216, 80, 0.5);
 }
 
-
 /* download brochure */
-.header-nav .nav-buttons {
-  display: flex;
-  gap: 0 18px;
-  margin-right: 3%;
-}
-
-.nav-btn {
-  font-size: 1.1rem;
-  color: #f3efef;
-  transition: background-color 0.3s;
-  transition: all 0.3s;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-}
-
 .nav-btn4 {
-   width: 15em;
+  width: 15em;
   height: 3em;
   border-radius: 30em;
   font-size: 15px;
@@ -280,9 +247,9 @@ img {
   text-decoration: none;
   color: white;
   transition: all 1s ease;
-  white-space: nowrap; /* added */
-  text-align: center;  /* optional */
-  padding: 0 1rem; 
+  white-space: nowrap;
+  text-align: center;
+  padding: 0 1rem;
 }
 .nav-btn4::before {
   content: "";
@@ -293,9 +260,7 @@ img {
   top: 0;
   left: 0;
   background-image: linear-gradient(to right, #0fd850 0%, #f9f047 10%);
-  transition: width 5s ease; /* ⏳ slower fill animation */
-
-  transition: 0.5s ease;
+  transition: width 0.5s ease;
   display: block;
   z-index: -1;
 }
@@ -309,3 +274,95 @@ img {
   box-shadow: 0 0 20px rgba(249, 240, 71, 0.8), 0 0 40px rgba(15, 216, 80, 0.5);
 }
 
+/* Mobile Responsive Styles */
+@media (max-width: 1024px) {
+  .brand-name {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  
+  .header-nav .branding img {
+    width: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    padding: 0.8rem 1rem;
+  }
+  
+  .brand-name {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+  
+  .header-nav .branding img {
+    width: 60px;
+  }
+  
+  /* Hide brochure and registration buttons in navbar on mobile */
+  .header-nav .nav-buttons {
+    display: none;
+  }
+  
+  /* Show hamburger menu */
+  .mobile-menu-toggle {
+    display: block !important;
+    background: none;
+    border: none;
+    color: #0fd850;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-name {
+    font-size: 12px;
+    letter-spacing: 0.3px;
+  }
+  
+  .header-nav .branding img {
+    width: 50px;
+  }
+  
+  .header-nav {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Hamburger menu styles */
+.mobile-menu-toggle {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 255, 136, 0.3);
+  z-index: 9998;
+  padding: 1rem;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.mobile-nav-buttons .nav-btn2,
+.mobile-nav-buttons .nav-btn3 {
+  width: 200px;
+  margin: 0 auto;
+}
